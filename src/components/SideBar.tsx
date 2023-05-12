@@ -21,6 +21,9 @@ export default function SideBar({ fetchData, setFetchData }: ISideBar) {
     const [isExpanded, setIsExpanded] = useState<Boolean>(false);
     const [selectedItem, setSelectedItem] = useState<string | null>(null); 
 
+
+    console.log(fetchData);
+
     const handleMouseEnter = () => {
         if(selectedItem === null)
         setIsExpanded(true);
