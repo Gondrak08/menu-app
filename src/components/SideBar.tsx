@@ -12,12 +12,10 @@ import desserts from '../menuData/desserts.json';
 import drinks from '../menuData/drinks.json';
 import pizza from '../menuData/pizzas.json';
 
-
-
 interface ISideBar {
     fetchData: Object[] | null,
     setFetchData: React.Dispatch<React.SetStateAction<object[] | null>>;
-}
+};
 
 export default function SideBar({ fetchData, setFetchData }: ISideBar) {
     const [isExpanded, setIsExpanded] = useState<Boolean>(false);
@@ -26,14 +24,13 @@ export default function SideBar({ fetchData, setFetchData }: ISideBar) {
     const handleMouseEnter = () => {
         if(selectedItem === null)
         setIsExpanded(true);
-    }
+    };
 
     const handleMouseLeave = () => {
         if(selectedItem === null)
         setIsExpanded(false);
-    }
-
-
+    };
+    
     function handleNavigation(type: string) {
         console.log(type);
         setSelectedItem(type);
@@ -56,10 +53,7 @@ export default function SideBar({ fetchData, setFetchData }: ISideBar) {
             return null
             break;
         }
-    }
-
-    console.log(selectedItem);
-
+    };
 
     return (
         <section
@@ -73,7 +67,6 @@ export default function SideBar({ fetchData, setFetchData }: ISideBar) {
                 <MdRestaurantMenu
                     className={`text-4xl   `}
                 />
-                {/* {isExpanded && <span className="ml-2 text-lg">Menu</span>} */}
                 <span className={`ml-2 transition-opacity duration-500 ease-in-out ${isExpanded ? "inline-block opacity-100 " : "hidden opacity-0"}`} style={{ transition: 'opacity 0.5s' }} >
                     Menus
                 </span>

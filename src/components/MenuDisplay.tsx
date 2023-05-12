@@ -7,8 +7,6 @@ import Pagination from './Pagination';
 export default function MenuDisplay({ products }: { products: Object[] }) {
     const [currentPage, setCurrentPage] = useState<number>(0);
 
-    console.log('menu-products', products.length)
-
     const itemsPerPage: number = 4;
     const paginatedItems: Object[] = [];
 
@@ -23,19 +21,7 @@ export default function MenuDisplay({ products }: { products: Object[] }) {
     const itemsToDisplay = paginatedItems[currentPage];
 
     return (
-        <section id="menu-component" className="flex flex-col gap-5 h-[100vh] w-full bg-gray-200 overflow-auto py-5 px-3">
-
-            <section id="header" className='w-full bg-gray-200'>
-                <div className='max-w-[1100px] w-full mx-auto flex justify-between  items-center' >
-
-                    <h1 className="text-4xl uppercase text-red-500">Burgers House</h1>
-
-                    <div>
-                        <TbShoppingCartX className='text-2xl text-red-500' />
-                    </div>
-
-                </div>
-            </section>
+        <section id="menu-component" className="flex flex-col gap-5 h-full w-full bg-gray-200 overflow-auto py-5 px-3">
 
             <div className="menu flex flex-col gap-3" >
                 {
