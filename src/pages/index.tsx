@@ -26,7 +26,7 @@ export default function Home() {
 
         </div>
         <div className='w-full' >
-            {fetchData === null && <PresentationDisplay/> }
+            {fetchData === null && <PresentationDisplay setFetchData={setFetchData} /> }
             {fetchData !==null &&  <MenuDisplay products={fetchData}  />}    
         </div>
       </section>
