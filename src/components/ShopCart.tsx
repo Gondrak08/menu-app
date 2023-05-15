@@ -1,6 +1,7 @@
 
 import { AiOutlineShopping } from 'react-icons/ai';
-import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux"
+import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
+import {removeItem} from '@/redux/reducer';
 import { RootState } from "@/redux/store";
 
 const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
@@ -34,6 +35,12 @@ export default function ShopCart() {
 }
 
 const CartCard = ({product}:{product:any})=>{
+    const dispatch = useDispatch();
+
+    const handleRemoveItem=()=>{
+        dispatch(removeItem(product))
+    }
+
     return (
         <div
         id="card"
@@ -56,9 +63,12 @@ const CartCard = ({product}:{product:any})=>{
                 <p className="text-gray-500" >{product.dsc}</p>
             </div>
 
-            <div className="flex justify-between items-end w-full " >
-                <span className="text-lg font-bold " >R$ {product.price}</span>
-                
+            <div className="flex justify-between  items-end w-full " >
+                <div className='flex justify-state items-end gap-2' >
+                    <span className="text-md font-bold " >{product.count} x</span>
+                    <span className="text-lg font-bold " >R$ {product.price}</span>
+                </div>
+                <button onClick={()=>handleRemoveItem()}>remove</button>
             </div>
         </div>
     </div>

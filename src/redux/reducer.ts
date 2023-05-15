@@ -16,31 +16,36 @@ const cartReducer = createSlice({
   reducers: {
     addItemToCart: (state, action: any) => {
       const isItemInCart = (state.items || []).filter((item: any) => item?.id === action.payload.id).length > 0;
+      const value = { ...action.payload, count: 1 }
       if (isItemInCart) {
-        const index = (state.items || []).findIndex((item: any, index:number) => item.id === action.payload.id  )
-        const clonedState:Object[] = Object.assign([{}], state.items);
-        if(state.items !=null && state.items !=undefined && state?.items[index]?.count){
-          const count  = state.items[index].count + 1
-          console.log("hi from count!!", count)
-          const value = {...action.payload, count: count}
-          clonedState[index] = value; 
-        } else{
-          const value = {...action.payload, count: 1}
-          clonedState[index] = value; 
+        const index = (state.items || []).findIndex((item: any, index: number) => item.id === action.payload.id)
+        const clonedState: Object[] = Object.assign([{}], state.items);
+        if (state.items != null && state.items != undefined && state?.items[index]?.count) {
+          const count = state.items[index].count + 1
+          const value = { ...action.payload, count: count }
+          clonedState[index] = value;
+        } else {
+          clonedState[index] = value;
         }
         state.items = clonedState;
-        // clonedState[index] = value; 
       } else {
         if (Array.isArray(state.items)) {
-          state.items.push(action.payload);
+          state.items.push(value);
         } else {
-          state.items = [action.payload];
+          state.items = [value];
         }
       }
 
     },
     removeItem: (state, action: any) => {
       // state.items = state.items.filter((item) => item.id !== action.payload);
+      const index = state.items?.findIndex((item:any)=>item.id === action.payload.id);
+      const filtered:Object[]  =( state.items?.filter((item:any,index)=>{
+        if(item?.id !==action.payload.id){
+          return item
+        }
+      })||[])
+      state.items = [filtered];
     },
     toggleCart: (state, action) => {
       state.isCart = !state.isCart;
