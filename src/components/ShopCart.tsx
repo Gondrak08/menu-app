@@ -18,14 +18,14 @@ export default function ShopCart() {
                 <h1>Os seus pedidos</h1> <AiOutlineShopping />
             </div>
             <div id='cart-body' className='w-full h-full flex flex-col box-border justify-between relative ' >
-                <div id='cart-content' className='h-full max-h-[40em] flex flex-col gap-2 w-full  p-2 overflow-auto bg-blue-500' >
+                <div id='cart-content' className='max-h-[40em] flex flex-col gap-2 w-full  p-2 overflow-auto  drop-shadow-lg ' >
                     {
                         cartProducts?.map((product: any, index: number) => (
                             <CartCard product={product} />
                         ))
                     }
                 </div>
-                <div className='flex justify-end  bg-green-500 w-full absolute bottom-5 ' >
+                <div className='flex justify-end w-full absolute bottom-4' >
                     <button className='p-3 bg-red-500 text-white rounded font-bold' >Send Order</button>
                 </div>
             </div>
