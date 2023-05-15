@@ -1,7 +1,10 @@
-import Image from "next/image"
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "@/redux/reducer";
+
 
 export default function Card({ product }: { product: any }) {
-
+    const dispatch = useDispatch();
+    const handleAddItemToCart=()=>{dispatch(addItemToCart(product))}
     return (
         <div
             id="card"
@@ -27,7 +30,7 @@ export default function Card({ product }: { product: any }) {
 
                 <div className="flex justify-between items-end w-full " >
                     <span className="text-lg font-bold " >R$ {product.price}</span>
-                    <button className="text-lg font-bold text-white bg-red-500 px-5 py-2 rounded" >Add to Cart</button>
+                    <button onClick={()=>{handleAddItemToCart()}} className="text-lg font-bold text-white bg-red-500 px-5 py-2 rounded" >Add to Cart</button>
                 </div>
             </div>
         </div>
