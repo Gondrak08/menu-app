@@ -41,11 +41,12 @@ const cartReducer = createSlice({
       // state.items = state.items.filter((item) => item.id !== action.payload);
       const index = state.items?.findIndex((item:any)=>item.id === action.payload.id);
       const filtered:Object[]  =( state.items?.filter((item:any,index)=>{
-        if(item?.id !==action.payload.id){
+        if(item?.id !== action.payload.id){
           return item
         }
       })||[])
-      state.items = [filtered];
+      state.items = filtered;
+
     },
     toggleCart: (state, action) => {
       state.isCart = !state.isCart;
