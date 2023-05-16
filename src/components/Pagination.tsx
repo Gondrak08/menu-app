@@ -25,7 +25,7 @@ export default function Pagination(props:IPagination){
         <nav className="flex mx-auto w-fit" >
           <ul id="pagination" className="flex items-center gap-5" >
             <li >
-              <button className={`page-item p-2  ${currentPage === 0 ? 'bg-gray-500 text-white cursor-not-allowed ' : 'bg-red-500 rounded-md text-white'}`} onClick={handlePrevClick} disabled={currentPage === 0}>
+              <button className={`page-item p-2 rounded-md  ${currentPage === 0 ? 'bg-gray-500 text-white cursor-not-allowed ' : 'bg-red-500  text-white'}`} onClick={handlePrevClick} disabled={currentPage === 0}>
                 Prev
               </button>
             </li>
@@ -37,7 +37,7 @@ export default function Pagination(props:IPagination){
               </li>
             ))}
             <li>
-              <button className={`page-item p-2 ${currentPage === totalPages ? 'disabled bg-gray-500 text-white cursor-not-allowed' : 'bg-red-500 rounded-md text-white'}`} onClick={handleNextClick} disabled={currentPage === totalPages}>
+              <button className={`page-item p-2 rounded-md ${currentPage === totalPages ? 'disabled bg-gray-500 text-white cursor-not-allowed' : 'bg-red-500  text-white'}`} onClick={handleNextClick} disabled={currentPage === totalPages}>
                 Next
               </button>
             </li>
