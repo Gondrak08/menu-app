@@ -53,7 +53,7 @@ export default function ShopCart() {
                         <div id='cart-content' className='max-h-[40em] flex flex-col gap-2 w-full  p-2 overflow-auto  drop-shadow-lg ' >
                             {
                                 cartProducts?.map((product: any, index: number) => (
-                                    <CartCard product={product} />
+                                    <CartCard key={index} product={product} />
                                 ))
                             }
                         </div>

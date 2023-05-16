@@ -62,7 +62,7 @@ export default function PresentationDisplay({setFetchData}:IPresentationDisplay)
                 <h1 className="text-xl text-red-400">Welcome to our restaurant. Chose your flavour.</h1>
                 <div className="w-full grid grid-cols-5 gap-5 p-2" >
                     {options.map((opt:IOptions,index:number)=>(
-                        <div onClick={()=>handleNavigation(opt.path)} className='card text-xl flex justify-between cursor-pointer  items-center rounded px-5 py-2  border border-red-500 bg-white hover:bg-red-500 hover:text-white hover:border-white ' >
+                        <div key={index} onClick={()=>handleNavigation(opt.path)} className='card text-xl flex justify-between cursor-pointer  items-center rounded px-5 py-2  border border-red-500 bg-white hover:bg-red-500 hover:text-white hover:border-white ' >
                             <span>{opt.text}</span>
                             <div className='icon text-red-500 hover:text-white' >
                                 {opt.icon}

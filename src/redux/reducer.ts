@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface ICart {
   isCart: boolean,
-  items: Object[] | null,
+  items: any[] | null,
   finalPrice:number
 }
 
@@ -43,10 +43,10 @@ const cartReducer = createSlice({
     getAllPrice:(state)=>{  
       const prices:any[] = [];
       const items  = state.items;
-      for( const  key in state.items){
-        const value = items[key]?.price * items[key]?.count
+      items?.map((item,key)=>{
+        const value = items && items[key]?.price * items[key]?.count
         prices.push(value)
-      };
+      })
       const finalPrice =  prices.reduce((x,y)=>x + y,0);
       state.finalPrice =  finalPrice;
     },
