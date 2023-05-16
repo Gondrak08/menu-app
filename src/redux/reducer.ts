@@ -2,12 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface ICart {
   isCart: boolean,
-  items: Object[] | null
+  items: Object[] | null,
+  finalPrice:number
 }
 
 const initialState: ICart = {
   isCart: false,
-  items: null
+  items: null,
+  finalPrice:0
 };
 
 const cartReducer = createSlice({
@@ -37,22 +39,34 @@ const cartReducer = createSlice({
       }
 
     },
+
+    getAllPrice:(state)=>{  
+      const prices:any[] = [];
+      const items  = state.items;
+      for( const  key in state.items){
+        const value = items[key]?.price * items[key]?.count
+        prices.push(value)
+      };
+      const finalPrice =  prices.reduce((x,y)=>x + y,0);
+      state.finalPrice =  finalPrice;
+    },
+
     removeItem: (state, action: any) => {
-      // state.items = state.items.filter((item) => item.id !== action.payload);
       const index = state.items?.findIndex((item:any)=>item.id === action.payload.id);
-      const filtered:Object[]  =( state.items?.filter((item:any,index)=>{
+      const filtered:Object[]  = (state.items?.filter((item:any,index)=>{
         if(item?.id !== action.payload.id){
           return item
         }
       })||[])
       state.items = filtered;
-
     },
+
     toggleCart: (state, action) => {
       state.isCart = !state.isCart;
     }
+    
   },
 });
 
-export const { addItemToCart, removeItem, toggleCart } = cartReducer.actions;
+export const { addItemToCart, getAllPrice, removeItem, toggleCart } = cartReducer.actions;
 export default cartReducer.reducer;
