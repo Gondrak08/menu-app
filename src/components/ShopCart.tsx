@@ -9,7 +9,7 @@ const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export default function ShopCart() {
     const dispatch = useDispatch();
-    const cartState = useTypedSelector(state => state.cart.isCart);
+    // const cartState = useTypedSelector(state => state.cart.isCart);
     const cartProducts = useTypedSelector(state => state.cart.items);
     const finalPrice = useTypedSelector(state => state.cart.finalPrice);
     const [isSended, setIsSended] = useState<boolean>(false);
@@ -45,7 +45,7 @@ export default function ShopCart() {
     return (
         <section className="flex flex-col w-[30em] h-[50em] absolute top-6 right-6 z-50 rounded p-3 drop-shadow-xl  bg-gray-100" >
             <div id='cart-header' className=' flex gap-3 items-center text-xl border-b-2 py-2' >
-                <h1>Os seus pedidos</h1> <AiOutlineShopping />
+                <h1>Your Orders</h1> <AiOutlineShopping />
             </div>
             {
                 isSended ? <SendedContainer /> : (
