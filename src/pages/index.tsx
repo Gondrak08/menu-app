@@ -29,7 +29,7 @@ export default function Home() {
       <section className='w-full h-full  flex flex-col gap-5 bg-gray-200 box-border py-5 relative '>
         <div className='max-w-[1100px] w-full mx-auto flex justify-between  items-center' >
 
-          <h1 className="text-4xl uppercase text-red-500">Burgers House</h1>
+          <h1 className="text-3xl font-bold  uppercase text-red-500">Pap's Kitchen House</h1>
 
           <div className='relative'>
             {
