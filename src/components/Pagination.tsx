@@ -9,7 +9,7 @@ export default function Pagination(props:IPagination){
     const pageNumbers = Array.from({length:totalPages}, (_,i) => i);
 
     const handlePrevClick=()=>{
-        if(currentPage > 1){
+        if(currentPage > 0){
             onPageChange(currentPage -1);
         }
     }
