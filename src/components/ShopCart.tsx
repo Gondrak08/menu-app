@@ -37,7 +37,7 @@ export default function ShopCart() {
     const SendedContainer = () => {
         return (
             <div className='w-full h-full flex justify-center items-center'>
-                <h3 className='text-xl' >Seu pedido foi enviado com sucesso!</h3> 
+                <h3 className='text-xl' >Your order has been successfully submitted!</h3> 
             </div>
         )
     }

@@ -71,7 +71,7 @@ export default function SideBar({ fetchData, setFetchData }: ISideBar) {
                     className={`text-4xl   `}
                 />
                 <span className={`ml-2 transition-opacity duration-500 ease-in-out ${isExpanded ? "inline-block opacity-100 " : "hidden opacity-0"}`} style={{ transition: 'opacity 0.5s' }} >
-                    Menus
+                    Menu
                 </span>
             </span>
 
