@@ -62,7 +62,7 @@ export default function Pagination(props: IPagination) {
 
   return (
     <nav className="flex mx-auto w-fit">
-      <ul id="pagination" className="flex   items-center gap-5">
+      <ul id="pagination" className="flex  items-center gap-5">
         <li>
           <button
             className={`page-item text-sm md:text-md p-2 rounded-md  

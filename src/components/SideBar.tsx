@@ -59,7 +59,7 @@ export default function SideBar({ fetchData, setFetchData }: ISideBar) {
         <section
             className={`h-full  bg-red-500 px-2 py-3 
             ${isExpanded && selectedItem === null ? 
-                "w-48 fixed md:relative top-0 left-0 z-50 " 
+                "w-36 md:w-48 fixed md:relative top-0 left-0 z-50 " 
                 : "w-fit md:w-12"
                 } transition-all duration-500 
                 ${ typeof selectedItem === "string" ? "w-48":''} `}

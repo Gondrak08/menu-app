@@ -37,13 +37,13 @@ export default function ShopCart() {
     const SendedContainer = () => {
         return (
             <div className='w-full h-full flex justify-center items-center'>
-                <h3 className='text-xl' >Your order has been successfully submitted!</h3> 
+                <h3 className='text-md md:text-xl' >Your order has been successfully submitted!</h3> 
             </div>
         )
     }
 
     return (
-        <section className="flex flex-col w-[30em] h-[50em] absolute top-6 right-6 z-50 rounded p-3 drop-shadow-xl  bg-gray-100" >
+        <section className="flex flex-col w-full min-w-[18em] md:w-[30em] h-[50em] absolute top-6 right-0 md:right-6 z-50 rounded p-3 drop-shadow-xl  bg-gray-100" >
             <div id='cart-header' className=' flex gap-3 items-center text-xl border-b-2 py-2' >
                 <h1>Your Orders</h1> <AiOutlineShopping />
             </div>
@@ -86,14 +86,14 @@ const CartCard = ({ product }: { product: any }) => {
             box-border
             mx-auto`
             } >
-            <div id="image" className="w-full max-w-[8em] h-full relative rounded-bl rounded-tl" >
+            <div id="image" className="w-full max-w-[5em] md:max-w-[8em] h-full relative rounded-bl rounded-tl" >
                 <img src={product?.img} className=" w-full h-full rounded-bl rounded-tl" />
             </div>
 
             <div id="description" className="w-full  p-2 flex flex-col justify-between ">
                 <div>
-                    <h3 className="text-2xl font-bold" >{product?.name}</h3>
-                    <p className="text-gray-500" >{product.dsc}</p>
+                    <h3 className="text-lg md:text-2xl font-bold" >{product?.name}</h3>
+                    <p className="text-sm md:text-md text-gray-500" >{product.dsc}</p>
                 </div>
 
                 <div className="flex justify-between  items-end w-full " >
