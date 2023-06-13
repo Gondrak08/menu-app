@@ -54,15 +54,18 @@ export default function PresentationDisplay({setFetchData}:IPresentationDisplay)
     
     const handleNavigation=(path:Object[])=>{
         setFetchData(path);
-    }
+    };
 
     return (
         <section className="presentation-display w-full h-full ">
             <div className="container h-full " >
-                <h1 className="text-xl text-red-400">Welcome to our restaurant. Chose your flavour.</h1>
-                <div className="w-full grid grid-cols-5 gap-5 p-2" >
+                <h1 className="text-md md:text-xl text-red-400">
+                    Welcome to our restaurant. Chose your flavour.
+                </h1>
+                <div className="w-full grid  grid-cols-1 md:grid-cols-4 lg:grid-cols-5
+                 gap-3 md:gap-5 p-2" >
                     {options.map((opt:IOptions,index:number)=>(
-                        <div key={index} onClick={()=>handleNavigation(opt.path)} className='card text-xl flex justify-between cursor-pointer  items-center rounded px-5 py-2  border border-red-500 bg-white hover:bg-red-500 hover:text-white hover:border-white ' >
+                        <div key={index} onClick={()=>handleNavigation(opt.path)} className='card text-md md:text-xl flex justify-between cursor-pointer  items-center rounded px-2 md:px-5 py-2  border border-red-500 bg-white hover:bg-red-500 hover:text-white hover:border-white ' >
                             <span>{opt.text}</span>
                             <div className='icon text-red-500 hover:text-white' >
                                 {opt.icon}

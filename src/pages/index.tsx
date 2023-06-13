@@ -21,15 +21,20 @@ export default function Home() {
   };
 
   return (
-    <main className="flex h-screen box-border  items-center justify-between ">
+    <main className="flex h-screen   
+    items-center justify-between relative ">
       <SideBar
         fetchData={fetchData ?? null}
         setFetchData={setFetchData}
       />
-      <section className='w-full h-full  flex flex-col gap-5 bg-gray-200 box-border py-5 relative '>
-        <div className='max-w-[1100px] w-full mx-auto flex justify-between  items-center' >
+      <section className='w-full h-full  flex flex-col gap-5
+       bg-gray-200 box-border py-5 px-5 md:px-2 relative '>
+        <div className='max-w-[1100px] w-full mx-auto flex
+         justify-between  items-center' >
 
-          <h1 className="text-3xl font-bold  uppercase text-red-500">Pap{`${"'"}`}s Kitchen House</h1>
+          <h1 className="text-lg md:text-3xl font-bold  uppercase text-red-500">
+            Pap{`${"'"}`}s Kitchen House
+            </h1>
 
           <div className='relative'>
             {
@@ -37,9 +42,12 @@ export default function Home() {
              <TbShoppingCartPlus onClick={() => handleCart()} className='cursor-pointer text-2xl text-red-500' />  
              :  
              (
-              <div className='flex items-center gap-3' >
-                <span className='text-red-500 font-bold' >your cart is empty</span>
-                <TbShoppingCartX  className='cursor-not-allowed text-2xl text-gray-500 opacity-[.5] ' />
+              <div className='flex items-center  md:gap-3' >
+                <span className='text-[12px] md:text-lg text-red-500 font-bold' >
+                  your cart is empty
+                </span>
+                <TbShoppingCartX  className='cursor-not-allowed 
+                text-2xl text-gray-500 opacity-[.5] ' />
               </div>
              )
             }
