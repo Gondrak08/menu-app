@@ -21,7 +21,8 @@ export default function MenuDisplay({ products }: { products: Object[] }) {
     const itemsToDisplay = paginatedItems[currentPage];
 
     return (
-        <section id="menu-component" className="flex flex-col gap-5 h-full w-full bg-gray-200 overflow-auto py-5 px-3">
+        <section id="menu-component" className="flex flex-col gap-5
+         h-full w-full bg-gray-200  py-5 px-0 md:px-3 box-border">
 
             <div className="menu flex flex-col gap-3" >
                 {
@@ -30,13 +31,13 @@ export default function MenuDisplay({ products }: { products: Object[] }) {
                     ))
                 }
             </div>
-            <div className='flex' >
-            <Pagination
-                currentPage={currentPage}
-                totalPages={paginatedItems.length}
-                onPageChange={handlePageChange}
-                
-            />
+            <div className='flex w-full' >
+                <Pagination
+                    currentPage={currentPage}
+                    totalPages={paginatedItems.length}
+                    onPageChange={handlePageChange}
+                    
+                />
             </div>
         </section>
     )

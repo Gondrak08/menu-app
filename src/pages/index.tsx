@@ -21,8 +21,8 @@ export default function Home() {
   };
 
   return (
-    <main className="flex h-screen   
-    items-center justify-between relative ">
+    <main className="flex h-screen box-border  
+    items-center justify-between ">
       <SideBar
         fetchData={fetchData ?? null}
         setFetchData={setFetchData}

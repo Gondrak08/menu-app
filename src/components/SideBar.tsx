@@ -57,10 +57,10 @@ export default function SideBar({ fetchData, setFetchData }: ISideBar) {
 
     return (
         <section
-            className={`h-screen bg-red-500 px-2 py-3 
+            className={`h-full  bg-red-500 px-2 py-3 
             ${isExpanded && selectedItem === null ? 
                 "w-48 fixed md:relative top-0 left-0 z-50 " 
-                : "w-12"
+                : "w-fit md:w-12"
                 } transition-all duration-500 
                 ${ typeof selectedItem === "string" ? "w-48":''} `}
             onMouseEnter={handleMouseEnter}
@@ -69,7 +69,7 @@ export default function SideBar({ fetchData, setFetchData }: ISideBar) {
 
             <span className="text-white flex items-center justify-center">
                 <MdRestaurantMenu
-                    className={`text-4xl `}
+                    className={`text-2xl md:text-4xl `}
                 />
                 <span className={`ml-2 transition-opacity duration-500 ease-in-out ${isExpanded ? "inline-block opacity-100 " : "hidden opacity-0"}`} style={{ transition: 'opacity 0.5s' }} >
                     Menu
@@ -79,7 +79,7 @@ export default function SideBar({ fetchData, setFetchData }: ISideBar) {
 
 
             <nav className="flex justify-center my-2">
-                <ul className="flex flex-col gap-2 text-2xl text-white">
+                <ul className="flex flex-col gap-2 text-lg md:text-2xl text-white">
 
                     <li className={`hover:cursor-pointer ${selectedItem === "hamburger" ? "selected-item" : ""}`}>
                         <FaHamburger onClick={() => handleNavigation("hamburger")} />
